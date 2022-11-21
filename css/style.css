@@ -1,23 +1,21 @@
 
 .background_div{
     width: 100%;
-    height: 2200px;
+    height: 2000px;
     display:flex;
     flex-direction: column;
 }
 
-/* html,
-body {
-	height: 100%;
-} */
+.background_div_page2{
+    width: 100%;
+    height: 3500px;
+    display:flex;
+    flex-direction: column;
+}
 
-/* body {
-	margin: 0;
-	background: linear-gradient(45deg, #49a09d, #5f2c82);
-	font-family: sans-serif;
-	font-weight: 100;
-} */
-
+label{
+    margin: 0;
+}
 
 /* header */
 .home_header{
@@ -27,6 +25,26 @@ body {
     border-width: 0px 0px 2px 0px;
     text-align: center;
     margin-top : 70px;
+}
+
+
+.home_header_title_div{
+    width: 300px;
+    margin: auto;
+    display: flex;
+}
+.home_header_logo{
+    flex: 2;
+    background-image: url("../img/logo2.png");
+    background-size : 90% 90%;
+    background-repeat : no-repeat;
+    background-position: center;
+}
+.home_header_text{
+    flex: 8;
+}
+.home_header_logo_right{
+    flex: 2;
 }
 
 .home_header_div_1{
@@ -45,39 +63,37 @@ body {
     padding: 15px;
 }
 .home_content_left_div{
-    flex:3;
+    flex:1;
 }
 .home_content_right_div{
-    flex:3;
+    flex:1;
 }
 
 .home_content_mid_div{
-    flex:6;
+    flex:10;
     display:flex;
     flex-direction: column;
-    background: linear-gradient(45deg, #49a09d, #5f2c82);
 }
 
 
 
 .table_total_class {
     width: 100%;
-    display: flex;
-    justify-content: center;
+    font-size: 14px;
 }
 
-table {
-	width: 100%;
-	border-collapse: collapse;
-	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+tr,th,td {
+	border-style:solid;
+    border-width: 1px;
+    border-color:rgb(171, 171, 171);
+    font-size: 12px;
 }
 
-th,
+/* th,
 td {
 	padding: 15px;
 	background-color: rgba(255,255,255,0.2);
-	color: white;
+	color: black;
 }
 
 th {
@@ -85,14 +101,21 @@ th {
 }
 
 thead th {
-		background-color: #55608f; 
-}
+	background-color: #55608f; 
+} */
 
 
 
 tbody tr:hover{
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgb(230, 230, 230);   
+    /* background-color: #f6f6f6;  */
+    /* rgba(255, 255, 255, 0.22) */
 }
+
+.input_css{
+    border: 0 solid black;
+}
+
 
 /* tbody td{
     position: relative;
