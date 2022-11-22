@@ -346,7 +346,7 @@ function calcSumPart(index) {
   total_sum = total_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	//총 금액컬럼에 계산된 금액 입력. 3자리마다 "," 입력.
   document.getElementById(tot_amt_id).innerText = total_sum;
 
-}
+} 
 
 
 
