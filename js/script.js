@@ -434,6 +434,7 @@ function DataloadPage2() {
 
   var all_part_num_data= JSON.parse(localStorage.getItem("all_part_num_data"));
   var all_part_price_data= JSON.parse(localStorage.getItem("all_part_price_data"));
+  var price= JSON.parse(localStorage.getItem("price"));
 
   for(let i = 0; i < table.rows.length-1; i++)  {  // 마지막행 제외하고 계산
     if (all_part_array.includes(i)){
@@ -448,6 +449,8 @@ function DataloadPage2() {
       CalcRow(i+1)
     }
   }
+
+  document.getElementById("txt_pri_105").value = price['부가세'];
 
   calcSumPage2()  
 
