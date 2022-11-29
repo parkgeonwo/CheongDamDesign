@@ -83,51 +83,97 @@
                                       ,"5.타일,욕실공사","내욕실","외욕실","추가","추가","욕조","현관바닥","베란다바닥"
                                       ,"베란다바닥","주방타일","기타","소계"
                                       ,"6.목공사","기본자재","단열작업","인건비","장비대","기타","소계"
-                                      ,"7.전기공사","기본공사","거실,주방","방","간접조명","실링펜","신발장하부조명","인건비"
+                                      ,"7.전기공사","기본자재","거실,주방","방","간접조명","실링펜","신발장하부조명","인건비"
                                       ,"기타","소계"
                                       ,"8.확장공사","발코니","소계"
                                       ,"8.철물공사","경첩,손잡이","소계"
-                                      ,"9.기타공사","도시가스","인터폰","도어락","입주청소","소계"
+                                      ,"9.기타공사","도시가스","인터폰/도어락","입주청소","보양작업","소계"
                                       ,"10.도장공사","탄성세라믹","소계"
                                       ,"11.가구공사","싱크대","싱크대","키큰장,냉장고장","싱크볼","수전","후드","대리석"
-                                      ,"키큰수납장","안방붙박이","신발장","창고장","화장대","소계"
-                                      ,"12.기업이윤","이윤 및 경비","소계"
-                                      ,"총가격"];
+                                      ,"키큰수납장","붙박이장","신발장","창고장","화장대","소계"
+                                      ,"12.이윤 및 공과잡비","공과잡비","이윤 및 경비","소계"
+                                      ,"부가세","합계"];
+                  
+                  // 드랍다운 만들기
+                  artwall = "<select id='artwall' onchange='artwallValue()' style='width:90%'><option>MDF</option><option>대리석돌</option></select>"
+                  door = "<select id='door' onchange='doorValue()' style='width:90%'><option>문</option><option>문틀</option></select>"
+                  middoor = "<select id='middoor' onchange='middoorValue()' style='width:90%'><option>3연동슬림</option><option>스윙도어</option><option>프리미엄슬라이딩</option></select>"
+                  roomdoor = "<select id='roomdoor' onchange='roomdoorValue()' style='width:90%'><option>ABS도어</option><option>문짝</option><option>문틀</option></select>"
+                  tunningdoor = "<select id='tunningdoor' onchange='tunningdoorValue()' style='width:90%'><option>LG</option><option>대우</option><option>현대</option><option>KCC</option><option>한샘</option></select>"
+                  balconydoor = "<select id='balconydoor' onchange='balconydoorValue()' style='width:90%'><option>LG</option><option>대우</option><option>현대</option><option>KCC</option><option>한샘</option></select>"
+                  room = "<select id='room' onchange='roomValue()' style='width:90%'><option>강마루</option><option>장판2.2t</option><option>데코타일</option></select>"
+                  bathtub = "<select id='bathtub' onchange='bathtubValue()' style='width:90%'><option>SMC</option><option>조적욕조</option></select>"
+                  faucet = "<select id='faucet' onchange='faucetValue()' style='width:90%'><option>거위목</option><option>슈티에</option></select>"
+                  hood = "<select id='hood' onchange='hoodValue()' style='width:90%'><option>빌트인</option><option>침니</option><option>아일랜드후드</option></select>"
+                  openclose = "<select id='openclose' onchange='opencloseValue()' style='width:90%'><option>여닫이</option><option>슬라이딩한샘</option></select>"
+
                   // 두번째 열에 들어갈 이름
-                  var interior_kind = ["","","","MDF","","","","","","","","","","","","",""
-                                      ,"3연동슬림","ABS도어","","","LX","LX","","","","",""
-                                      ,"강마루","","","현관문","샷시(내부)","창고문","문,문틀","신발장","붙박이","싱크대"
-                                      ,"","","","","","300*600","300*600","600*600","600*1200","SMC","600*600","앞","뒤"
-                                      ,"","","","","","","","","","","","","매립등","연등"
-                                      ,"","","","","","","","방","","","","",""
-                                      ,"철거,배관이동","","","","","","","",""
-                                      ,"상*하부장","하부장","","백조","거위목","빌트인","","","여닫이","","","5단서랍,거울",""
-                                      ,"","공사금액+15%",""];
+                  var interior_kind = ["","","",artwall,"","","","","","","",door,"","","","" // 1.폐기물처리,철거
+                                      ,"",middoor,roomdoor,"" // 2.문공사
+                                      ,"",tunningdoor,balconydoor,"" // 3.창호공사
+                                      ,"","","","",room,"","" // 3.도배,바닥공사
+                                      ,"현관문","샷시(내부)","창고문","문,문틀","신발장","붙박이","싱크대","","","","" // 4.필름공사
+                                      ,"","300*600","300*600","600*600","600*1200",bathtub,"600*600","앞","뒤","","","" // 5.타일,욕실공사
+                                      ,"","","","","","","" // 6.목공사
+                                      ,"","","매립등","연등","","","","","","", // 7.전기공사
+                                      "","방",""  // 8.확장공사
+                                      ,"","",""   // 8.철물공사
+                                      ,"","철거,배관이동","","","","" // 9.기타공사
+                                      ,"","","" // 10.도장공사
+                                      ,"","상*하부장","하부장","","백조",faucet,hood,"","",openclose,"","","5단서랍,거울","" // 11.가구공사
+                                      ,"","5%","10%","" // 12.이윤 및 공과잡비
+                                    ];
                                       
                   // 세번째 열에 들어갈 단위
-                  var interior_unit = ["","m","자","식","식","틀","식","평","식","틀","칸","개","평","차","식","",""
-                                    ,"식","set","","","틀","식","","","평","품","식","평","",""
-                                    ,"M","M","M","M","M","M","M","식","품","식","",""
-                                    ,"칸","칸","칸","칸","식","식","칸","칸","식","식","",""
-                                    ,"식","칸","품","날","식","",""
-                                    ,"식","개","개","식","식","식","품","식","","","칸"
-                                    ,"","","개","",""
-                                    ,"식","식","식","평",""
+                  var interior_unit = ["","m","자","식","식","틀","식","평","식","틀","칸","개","평","차","식",""
+                                    ,"","식","set",""
+                                    ,"","틀","식",""
+                                    ,"","평","품","식","평",""
+                                    ,"","M","M","M","M","M","M","M","식","품","식",""
+                                    ,"","칸","칸","칸","칸","식","식","칸","칸","식","식",""
+                                    ,"","식","칸","품","날","식",""
+                                    ,"","식","개","개","식","식","식","품","식",""
                                     ,"","칸",""
-                                    ,"","M","M","M","식","식","식","M","자","자","자","개","식","","","",""];
-                  // 비고란 설명
-                  var etc = ["","","","대리석 돌 _ 22만","","","","","",""
-                            ,"도기,수전,거울,장,ACC,천정 돔 / 타일 제외","문_1.3천원","","","","",""
-                            ,"스윙도어125 / 프리미엄슬라이딩 120","문짝 14.5 / 문틀 19.5","","","","","",""
-                            ,"평+2.5+5py","1품 15~20py","","장판2.2t 5.5 / 데코타일 4.8","","","","",""
-                            ,"문4.5/문틀2.5_7m","","","","",""
-                            ,"33평 내부 필름 기준","","","","","",""
-                            ,"조적욕조 52","","","","","","",""
-                            ,"몰딩,걸레받이,9mm문선,거실면작업","","","","","",""
-                            ,"기본_스위치 콘센트 전선작업","","","","","","","","","","","","","","","","","",""
-                            ,"","","","","","","","",""
-                            ,"사각볼","슈티에 27","침니 28 / 아일랜드후드 49","","","슬라이딩 한샘 18.5"
-                            ,"","","","","","",""]
+                                    ,"","개",""
+                                    ,"","식","식","평","식",""
+                                    ,"","칸",""
+                                    ,"","M","M","M","식","식","식","M","자","자","자","개","M","",
+                                    "","식","식",""];
+                  // 다섯번째 열에 들어갈 단가
+                  var interior_price =[
+                    "","33,000","18,000","120,000","70,000","60,000","180,000","21,000","150,000","80,000","165,000","34,000","36,000","250,000","0","", // 1.폐기물처리,철거
+                    "","1,050,000","350,000","",  // 2.문공사
+                    "","0","0","", // 3.창호공사
+                    "","9,500","250,000","100,000","115,000","",// 3.도배,바닥공사
+                    "","12,000","12,000","12,000","12,000","12,000","12,000","12,000","180,000","270,000","300,000","",// 4.필름공사
+                    "","2,200,000","2,350,000","750,000","1,850,000","270,000","150,000","450,000","250,000","350,000","0","",// 5.타일,욕실공사
+                    "","840,000","450,000","320,000","50,000","0","",// 6.목공사
+                    "","350,000","12,000","40,000","200,000","420,000","50,000","250,000","0","",// 7.전기공사
+                    "","450,000","",// 8.확장공사
+                    "","35,000","",// 8.철물공사
+                    "","300,000","0","12,000","185,000","",// 9.기타공사
+                    "","280,000","",// 10.도장공사
+                    "","280,000","400,000","165,000","300,000","140,000","90,000","155,000","75,000","124,000","102,000","260,000","280,000","",// 11.가구공사
+                    "","0","0","",// 12.이윤 및 공과잡비
+                  ];
+
+
+                  // 일곱번째 컬럼 : 비고란 설명
+                  var etc = [
+                            "-","-","-","대리석돌(종류)_220,000(단가)","-","-","-","-","-","-","도기,수전,거울,장,ACC,천정_돔_/_타일_제외","문(종류)_13,000(단가)","-","-","-","-"
+                            ,"-","스윙도어_12,500,000_/_프리미엄슬라이딩_1,200,000","문짝_145,000_/_문틀_195,000","-"
+                            ,"-","LG/대우/KCC/한샘","LG/대우/KCC/한샘","-"
+                            ,"-","-","-","-","장판2.2t(종류)_55,000(단가)_/_데코타일_48,000","-"
+                            ,"-","-","-","-","-","-","-","-","-","-","20~30py_기준","-"
+                            ,"-","-","-","-","-","조적욕조_520,000","-","-","-","-","-","-"
+                            ,"-","몰딩,걸레받이,9mm문선,거실면작업","-","-","-","-","-"
+                            ,"-","기본_스위치_콘센트_전선_자재","-","-","-","-","-","-","-","-"    // 7.전기공사
+                            ,"-","-","-" // 8.확장공사
+                            ,"-","-","-" // 8.철물공사
+                            ,"-","-","-","-","-","-" // 9.기타공사
+                            ,"-","-","-" // 10.도장공사
+                            ,"-","-","-","-","사각볼","슈티에(종류)_270,000(단가)","침니(종류)_280,000_/_아일랜드후드(종류)_490,000","-","-","슬라이딩_한샘(종류)_185,000(단가)","-","-","-","-"
+                            ,"-","-","-","-"]
                   // width array
                   var width_array = ["19%","13%","6%","10%","14%","15%","23%"]
                   // title color array
@@ -135,6 +181,8 @@
                   // input tag not include array
                   var not_include_array = [0, 15,16,   19,20,   23,24,   29,30,   41,42,   53,54,   60,61,   70,71, 
                                               73,74,   76,77,   82,83,   85,86,   99,100]  // id 값보다 1씩 작음
+                  // 소계 row num array
+                  var part_sum_row_array = [15, 19, 23, 29, 41, 53, 60, 70, 73, 76, 82, 85, 99, 103 ]
   
                   //테이블 생성 태그를 연다.
                   document.write("<table width='100%' border='1' id='page2_table_id' style='text-align: center'>");
@@ -144,12 +192,13 @@
                   // i 는 0부터 / k는 i+1 / id값들은 k로
 
                   // for문 시작
-                  for ( var i=0; i<104 ; i++) {
+                  // 한칸늘릴때마다 i 값을 하나씩 다 늘리면됨
+                  for ( var i=0; i<106 ; i++) {
                   
                    if (title_color_array.includes(i)){  // 주제 row 는 다르게 표현
                     document.write("<tr height='26' style='font-size:14px; font-weight: bold; background-color: rgb(243, 243, 243);'>");
                    }
-                   else if (i==103){
+                   else if (i==104 || i==105){
                     document.write("<tr height='40' style='font-size:30px; font-weight: bold; background-color: rgb(230, 230, 230);'>");
                    }
                    else{
@@ -167,26 +216,34 @@
                       var txt="";    // 테이블각 셀에 (행,열) 값을 출력하기위해 정의된 String
                     }
                     
-                    if(j==1 && i<= 101 ){ // 종류 컬럼
+                    if(j==1 && i<= 102 ){ // 종류 컬럼
                       document.write("<td width=" +width_array[j]+ "align='center'>"+interior_kind[i]+"</td>");
                     }
-                    else if(j==2 && i<= 101 ){ // 단위 컬럼
+                    else if(j==2 && i<= 102 ){ // 단위 컬럼
                       document.write("<td width=" +width_array[j]+ "align='center'>"+interior_unit[i]+"</td>");
                     }
-                    else if(j==3 && i<= 101 && !not_include_array.includes(i) ){ // 수량 컬럼
-                      document.write("<td width="+width_array[j]+"align='center'><center><input type='text' class='input_css' id='txt_qty_"+k+"' style='width:100%' onblur='losFocus(id);' onkeyup = 'this.value=numberFormat(this.value, true, true, true)'></center></td>"   );
+                    else if(j==3 && i<= 102 && !not_include_array.includes(i) ){ // 수량 컬럼
+                      document.write("<td width="+width_array[j]+"align='center'><center><input type='text' value=0 class='input_css' id='txt_qty_"+k+"' style='width:100%' onblur='losFocus(id);' onkeyup = 'this.value=numberFormat(this.value, true, true, true)'></center></td>"   );
                     }
-                    else if(j==4 && i<= 101 && !not_include_array.includes(i) ){ // 단가 컬럼
-                      document.write("<td width="+width_array[j]+"align='center'><center><input type='text' class='input_css' id='txt_pri_"+k+"' style='width:100%' onblur='losFocus(id);' onkeyup = 'this.value=numberFormat(this.value, true, true, true)'></center></td>"   );
+                    else if(j==4 && i<= 102 && !not_include_array.includes(i) ){ // 단가 컬럼
+                      document.write("<td width="+width_array[j]+"align='center'><center><input type='text' value="+interior_price[i]+" class='input_css' id='txt_pri_"+k+"' style='width:100%' onblur='losFocus(id);' onkeyup = 'this.value=numberFormat(this.value, true, true, true)'></center></td>"   );
                     }
-                    else if(j==5 && i<= 101 ){ // 금액 컬럼
-                      document.write("<td width=" +width_array[j]+ "align='center'><b><label id='tot_amt_"+k+"'></label></b></td>");
+                    else if(j==5 && i<= 103 ){ // 금액 컬럼
+                      if(part_sum_row_array.includes(i)){ // 소계 칸은 글자 굵게
+                        document.write("<td width=" +width_array[j]+ "align='center'><b><label id='tot_amt_"+k+"'></label></b></td>");
+                      }
+                      else{
+                        document.write("<td width=" +width_array[j]+ "align='center'><label id='tot_amt_"+k+"'></label></td>");
+                      }
                     }
-                    else if(j==5 && i == 103 ){ // total 금액 컬럼
+                    else if(j==5 && i== 104 ){ // 금액 컬럼, 부가세 줄만
+                      document.write("<td width="+width_array[j]+"align='center'><center><input type='text' value=0 class='input_css' id='txt_pri_"+k+"' style='width:100%; background-color:rgb(230, 230, 230);' onblur='losFocus(id);' onkeyup = 'this.value=numberFormat(this.value, true, true, true)'></center></td>"   );
+                    }
+                    else if(j==5 && i == 105 ){ // total 금액 컬럼
                       document.write("<td width=" +width_array[j]+ "align='center'><b><label id='tot_amt_last_page2'></label></b></td>");
                     }
-                    else if(j==6 && i<= 101 ){ // 종류 컬럼
-                      document.write("<td width=" +width_array[j]+ "align='center'>"+etc[i]+"</td>");
+                    else if(j==6 && i<= 102 ){ // 비고 컬럼
+                      document.write("<td width=" +width_array[j]+ "align='center'><input type='text' value="+etc[i]+" class='input_css' style='width:100%'> </td>");
                     }
 
                     else{
@@ -204,11 +261,15 @@
 
               </div>
 
+              <!-- 데이터 불러오기 버튼 onclick='DataloadPage2()' --> 
+              <input type='button'
+              value='불러오기' 
+              onclick='DataloadPage2()'
+               />
               <!-- 합계 계산 버튼 -->
               <input type='button' 
                 value='합계 계산' 
                 onclick='calcSumPage2()' />
-              <div id='sum'></div>
 
             </div>
 
