@@ -194,10 +194,39 @@ function calcSumPage2() {
   calcSumPart(index=11)
   calcSumPart(index=12)
   calcSumPart(index=13)
-  calcSumPart(index=14)
 
   // table element 찾기
   const table = document.getElementById('page2_table_id');
+
+  // 11번 카테고리까지 합 구하기
+  let total_sum_1_to_11 = 0;
+
+  // part_sum_array
+  var part_sum_array = [15, 19, 23, 29 , 41, 53, 60, 70, 73, 76, 82, 85, 99] // i값
+
+  for(let i = 0; i < table.rows.length-1; i++)  {  // 마지막행 제외하고 계산
+    if (part_sum_array.includes(i)){
+      let value = stringNumberToInt(table.rows[i].cells[5].innerText);
+      // 만약 value가 Nan 이라면 0으로 처리
+      // sum 시켜주기
+      if (isNaN(value)) {
+          value = 0
+        }
+      total_sum_1_to_11 += value
+    }
+  }
+  // 공과잡비와 이윤 및 경비 넣어주기
+  var utility_bills = total_sum_1_to_11 * 0.05;  // 5% 
+  var utility_bills = utility_bills.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  document.getElementById("tot_amt_102").innerHTML = utility_bills;
+
+  var profit = total_sum_1_to_11 * 0.07;  // 7% 
+  var profit = profit.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  document.getElementById("tot_amt_103").innerHTML = profit;
+
+  calcSumPart(index=14)
+
+
 
   // 합계 계산
   let total_sum = 0;
@@ -222,9 +251,12 @@ function calcSumPage2() {
   // 부가세가 안더해진 값 저장하기
   var total_sum_without_vat = total_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-  // 부가세 값 가져와서 더해주기
-  var vat = document.getElementById("txt_pri_105").value;	//해당 가격컬럼의 값을 vat 에 저장
+  // 1.1 부가세 값 넣어주기
+  var vat = total_sum * 0.011;
+  var vat = vat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  document.getElementById("txt_pri_105").value = vat;	//해당 가격컬럼의 값을 vat 에 저장
   var vat_replace = vat.replace(/,/g, "");
+
   total_sum += stringNumberToInt(vat_replace)
 
   // 합계 출력
@@ -364,8 +396,7 @@ function calcSumPart(index) {
     75,
     78,79,80,81,
     84,
-    87,88,89,90,91,92,93,94,95,96,97,98,
-    101,102
+    87,88,89,90,91,92,93,94,95,96,97,98
   ]
 
   // console.log(table.rows[i].cells[4].innerText);
@@ -387,6 +418,11 @@ function calcSumPart(index) {
 
   // Json Object를 저장하기
   localStorage.setItem("all_part_num_data", JSON.stringify(all_part_num_data));
+
+
+
+
+
 
   // 가격 데이터 page간 전달을 위한 json 
   var all_part_price_data = {};
@@ -497,10 +533,10 @@ function artwallValue(){
 function doorValue(){
   var value = document.getElementById('door');
   var text = value.options[value.selectedIndex].text;
-  if( text == '문' ){
+  if( text == '문/문틀' ){
     document.getElementById('txt_pri_12').value = "34,000";
   }
-  if( text == '문틀' ){
+  if( text == '문' ){
     document.getElementById('txt_pri_12').value = "13,000";
   }
 }
@@ -513,7 +549,7 @@ function middoorValue(){
     document.getElementById('txt_pri_18').value = "1,050,000";
   }
   if( text == '스윙도어' ){
-    document.getElementById('txt_pri_18').value = "12,500,000";
+    document.getElementById('txt_pri_18').value = "1,250,000";
   }
   if( text == '프리미엄슬라이딩' ){
     document.getElementById('txt_pri_18').value = "1,200,000";
