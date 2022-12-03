@@ -30,27 +30,13 @@
   </head>
   <body>
     <div class="background_div">
-        <div class="home_header">
+        <div class="home_header" style="height:120px;">
 
           <div class="home_header_title_div">
             <div class="home_header_logo">
             </div>
-            <div class="home_header_text">
-              <div class="home_header_div_1">
-                <span style="margin:0px; font-size: 75px;">CHEONGDAM</span>
-              </div>
-              <div class="home_header_div_2">
-                INTERIOR DESIGN
-              </div>
-            </div>
-            <div class="home_header_logo_right">
-            </div>
           </div>
 
-          <div class="home_footer_div_1 mt-4">
-              <span><a href="index.html" style="color:#000000; text-decoration: none;">견적서</a></span> |
-              <span><a href="statement.html" style="color:#000000; text-decoration: none;">내역서</a></span>
-          </div>
         </div>
 
         <div class="home_content">
@@ -58,29 +44,33 @@
             
             <div class="home_content_mid_div">
 
+              <div class="home_footer_div_1 mt-4">
+                <span><a href="index.html" style="color:#000000; text-decoration: none;"><b>견적서</b></a></span>ㅤ|ㅤ<span><a href="statement.html" style="color:#000000; text-decoration: none;">내역서</a></span>
+              </div>
+
               <div class="table_total_class">
 
                 <!-- 내용 테이블 -->
-                <table  class="mt-5 mb-5" valign='top' width='100%'>
+                <table  class="mt-5" valign='top' width='100%' style="margin-bottom: 70px;">
                   <tr class='page1_table3_class' height='25'>
-                    <td class='page1_table3_class' width="6%" align="left">공사명</td>
+                    <td class='page1_table3_class' width="6%" align="left"><b>공사명</b></td>
                     <td class='page1_table3_class' width="34%" align="left"><input type='text' class='input_css' style='width:100%; text-align:left'></td>
                     <td class='page1_table3_class' width="6%" align="left"></td>
-                    <td class='page1_table3_class' width="6%" align="left">상 호</td>
+                    <td class='page1_table3_class' width="6%" align="left"><b>상 호</b></td>
                     <td class='page1_table3_class' width="40%" align="left">청담디자인</td>
                   </tr>
                   <tr class='page1_table3_class' height='25'>
-                    <td class='page1_table3_class' width="6%" align="left">견적일</td>
+                    <td class='page1_table3_class' width="6%" align="left"><b>견적일</b></td>
                     <td class='page1_table3_class' width="34%" align="left"><input type='text' class='input_css' style='width:100%; text-align:left'></td>
                     <td class='page1_table3_class' width="6%" align="left"></td>
-                    <td class='page1_table3_class' width="6%" align="left">주 소</td>
+                    <td class='page1_table3_class' width="6%" align="left"><b>주 소</b></td>
                     <td class='page1_table3_class' width="40%" align="left">대구광역시 달성군 대실역북로 3길 7</td>
                   </tr>
                   <tr class='page1_table3_class' height=25'>
                     <td class='page1_table3_class' width="6%" align="left" colspan="2"></td>
                     <!-- <td class='page1_table3_class' width="34%" align="left">실내인테리어</td> -->
                     <td class='page1_table3_class' width="6%" align="left"></td>
-                    <td class='page1_table3_class' width="6%" align="left">성 명</td>
+                    <td class='page1_table3_class' width="6%" align="left"><b>성 명</b></td>
                     <td class='page1_table3_class' width="40%" align="left">조 민 국            (인)</td>
                   </tr>
                   <tr class='page1_table3_class' height='25'>
@@ -88,14 +78,14 @@
                     <!-- <td class='page1_table3_class' width="6%" align="left" colspan="2" rowspan="2" ><input type='text' class='underline' style='width:100%; height: 50px; text-align:center; font-size:20px;'></td> -->
                     <td class='page1_table3_class' width="34%" align="left" rowspan="2"><input type='text' class='underline' style='width:100%; height: 50px; text-align:center; font-size:20px;'></td>
                     <td class='page1_table3_class' width="6%" align="left"></td>
-                    <td class='page1_table3_class' width="6%" align="left">전 화</td>
+                    <td class='page1_table3_class' width="6%" align="left"><b>전 화</b></td>
                     <td class='page1_table3_class' width="40%" align="left">010-6648-6556</td>
                   </tr>
                   <tr class='page1_table3_class' height='25'>
                     <td class='page1_table3_class' width="6%" align="left"></td>
                     <!-- <td class='page1_table3_class' width="34%" align="left">실내인테리어</td> -->
                     <td class='page1_table3_class' width="6%" align="left"></td>
-                    <td class='page1_table3_class' width="6%" align="left">메 일</td>
+                    <td class='page1_table3_class' width="6%" align="left"><b>메 일</b></td>
                     <td class='page1_table3_class' width="40%" align="left">cheongdam_id@naver.com</td>
                   </tr>
                 </table>
@@ -109,7 +99,7 @@
 
 
                 <table valign='top' width='100%'>
-                    <tr class='page1_table1_class' height='40'>
+                    <tr class='page1_table1_class' height='40' bgcolor='#F7F5E6'>
                       <td class='page1_table1_class' width="5%" align="left"><b></b></td>
                       <td class='page1_table1_class' width="40%" align="left"><b>공 종</b></td>
                       <td class='page1_table1_class' width="28%" align="left"><b></b></td>
@@ -130,7 +120,7 @@
                   
                   // for문 시작
                   for ( var i=0; i<14 ; i++) {
-                   document.write("<tr class='page1_table3_class' height='40'>");    // <tr> : 행추가.
+                   document.write("<tr class='page1_table3_class' height='45'>");    // <tr> : 행추가.
                    var k = i+1
                   
                  
@@ -188,22 +178,22 @@
 
                 <table valign='top' width='100%'>
                   <tr class='page1_table3_class' height='40'>
-                    <td class='page1_table3_class' width="65%" align="left"></td>
-                    <td class='page1_table3_class' width="5%" align="left"></td>
-                    <td class='page1_table3_class' width="15%" align="left" style="font-size: 20px;"><b>소계</b></td>
-                    <td class='page1_table3_class' width="15%" align="right" style="text-align: right; font-size: 20px;" id="page1_price_15"><b></b></td>
+                    <td class='page1_table3_class' width="68.5%" align="left"></td>
+                    <td class='page1_table3_class' width="1.5%" align="left"></td>
+                    <td class='page1_table3_class' width="15%" align="left" style="font-size: 16px; font-family: 'GmarketSansMedium', sans-serif;"><b>소계</b></td>
+                    <td class='page1_table3_class' width="15%" align="right" style="text-align: right; font-size: 16px; font-family: 'GmarketSansMedium', sans-serif;" id="page1_price_15"><b></b></td>
                   </tr>
                   <tr class='page1_table3_class' height='40'>
-                    <td class='page1_table3_class' width="65%" align="left"></td>
-                    <td class='page1_table4_class' width="5%" align="left"></td>
-                    <td class='page1_table4_class' width="15%" align="left" style="font-size: 20px;">부가세</td>
-                    <td class='page1_table4_class' width="15%" align="right" style="text-align: right; font-size: 20px;" id="page1_price_16"></td>
+                    <td class='page1_table3_class' width="68.5%" align="left"></td>
+                    <td class='page1_table4_class' width="1.5%" align="left"></td>
+                    <td class='page1_table4_class' width="15%" align="left" style="font-size: 16px; font-family: 'GmarketSansMedium', sans-serif;">부가세</td>
+                    <td class='page1_table4_class' width="15%" align="right" style="text-align: right; font-size: 16px; font-family: 'GmarketSansMedium', sans-serif;" id="page1_price_16"></td>
                   </tr>
-                  <tr class='page1_table3_class' height='40'>
-                    <td class='page1_table3_class' width="65%" align="left"></td>
-                    <td class='page1_table3_class' width="5%" align="left"></td>
-                    <td class='page1_table3_class' width="15%" align="left" style="font-size: 20px;"><b>금액</b></td>
-                    <td class='page1_table3_class' width="15%" align="right" style="text-align: right; font-size: 20px;" id="page1_price_17"></td>
+                  <tr class='page1_table3_class' height='50'>
+                    <td class='page1_table3_class' width="68.5%" align="left"></td>
+                    <td class='page1_table3_class' width="1.5%" align="left"></td>
+                    <td class='page1_table3_class' width="15%" align="left" style="font-size: 16px; font-family: 'GmarketSansMedium', sans-serif;"><b>금액</b></td>
+                    <td class='page1_table3_class' width="15%" align="right" style="text-align: right; font-size: 16px; font-family: 'GmarketSansMedium', sans-serif;" id="page1_price_17"></td>
                   </tr>
                 </table>
 
@@ -218,16 +208,8 @@
         </div>
 
         <div class="home_footer">
-          <div class="home_footer_div_1">
-            <span><a></a></span> 
-            <span><a></a></span>
-            <!-- <span><a style="color:#000000; text-decoration: none;" href="https://powerful-drain-18f.notion.site/Geonwoo-Park-9c39ca06a5644057a654866ca5ed0e8b">포트폴리오</a></span> | -->
-            <span><a></a></span>
+          <div class="home_footer_logo">
           </div>
-          <div>
-            <h5>CHEONGDAM INTERIOR DESIGN</h5>
-          </div>
-
         </div>
     </div>
 
