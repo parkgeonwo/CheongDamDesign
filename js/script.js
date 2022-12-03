@@ -216,11 +216,11 @@ function calcSumPage2() {
     }
   }
   // 공과잡비와 이윤 및 경비 넣어주기
-  var utility_bills = total_sum_1_to_11 * 0.05;  // 5% 
+  var utility_bills = Math.ceil ( total_sum_1_to_11 * 0.05 );  // 5% 
   var utility_bills = utility_bills.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   document.getElementById("tot_amt_102").innerHTML = utility_bills;
 
-  var profit = total_sum_1_to_11 * 0.07;  // 7% 
+  var profit = Math.ceil( total_sum_1_to_11 * 0.07 );  // 7% 
   var profit = profit.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   document.getElementById("tot_amt_103").innerHTML = profit;
 
@@ -252,7 +252,7 @@ function calcSumPage2() {
   var total_sum_without_vat = total_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   // 1.1 부가세 값 넣어주기
-  var vat = total_sum * 0.011;
+  var vat = Math.ceil( total_sum * 0.011 );
   var vat = vat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   document.getElementById("txt_pri_105").value = vat;	//해당 가격컬럼의 값을 vat 에 저장
   var vat_replace = vat.replace(/,/g, "");
@@ -464,8 +464,7 @@ function DataloadPage2() {
     75,
     78,79,80,81,
     84,
-    87,88,89,90,91,92,93,94,95,96,97,98,
-    101,102
+    87,88,89,90,91,92,93,94,95,96,97,98
   ]
 
   var all_part_num_data= JSON.parse(localStorage.getItem("all_part_num_data"));
