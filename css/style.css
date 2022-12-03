@@ -102,15 +102,17 @@ label{
     border-color: rgb(203, 201, 196);
     border-width: 2px;
     text-align: left;
-    font-size: 14px;
-    
+    font-size: 13px;
+    font-family: 'GmarketSansMedium', sans-serif;
 }
+
 .page1_table2_class{
     border-left-style: none;
     border-right-style: none;
     border-color: rgb(190, 190, 190);
     border-collapse : collapse;
     text-align: left;
+    font-family: 'GmarketSansMedium', sans-serif;
 }
 
 .page1_table3_class{
