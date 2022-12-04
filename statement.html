@@ -99,7 +99,7 @@
                                       ,"11.가구공사","싱크대","싱크대","키큰장,냉장고장","싱크볼","수전","후드","대리석"
                                       ,"키큰수납장","붙박이장","신발장","창고장","화장대","소계"
                                       ,"12.이윤 및 공과잡비","공과잡비","이윤 및 경비","소계"
-                                      ,"부가세","합계"];
+                                      ,"","합계"];
                   
                   // 드랍다운 만들기
                   artwall = "<select id='artwall' onchange='artwallValue()' style='width:90%'><option>MDF</option><option>대리석돌</option></select>"
@@ -205,7 +205,10 @@
                    if (title_color_array.includes(i)){  // 주제 row 는 다르게 표현
                     document.write("<tr height='26' style='font-size:14px; font-weight: bold; background-color: rgb(243, 243, 243);'>");
                    }
-                   else if (i==104 || i==105){
+                   else if (i==104){
+                    document.write("<tr height='26' style='font-size:14px; font-weight: bold;'>");
+                   }
+                   else if (i==105){
                     document.write("<tr height='40' style='font-size:30px; font-weight: bold; background-color: rgb(230, 230, 230);'>");
                    }
                    else{
@@ -243,9 +246,9 @@
                         document.write("<td width=" +width_array[j]+ "align='center'><label id='tot_amt_"+k+"'></label></td>");
                       }
                     }
-                    else if(j==5 && i== 104 ){ // 금액 컬럼, 부가세 줄만
-                      document.write("<td width="+width_array[j]+"align='center'><center><input type='text' value=0 class='input_css' id='txt_pri_"+k+"' style='width:100%; background-color:rgb(230, 230, 230);' onblur='losFocus(id);' onkeyup = 'this.value=numberFormat(this.value, true, true, true)'></center></td>"   );
-                    }
+                    // else if(j==5 && i== 104 ){ // 금액 컬럼, 부가세 줄만
+                    //   document.write("<td width="+width_array[j]+"align='center'><center><input type='text' value=0 class='input_css' id='txt_pri_"+k+"' style='width:100%; background-color:rgb(230, 230, 230);' onblur='losFocus(id);' onkeyup = 'this.value=numberFormat(this.value, true, true, true)'></center></td>"   );
+                    // }
                     else if(j==5 && i == 105 ){ // total 금액 컬럼
                       document.write("<td width=" +width_array[j]+ "align='center'><b><label id='tot_amt_last_page2'></label></b></td>");
                     }

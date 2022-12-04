@@ -252,16 +252,16 @@ function calcSumPage2() {
   var total_sum_without_vat = total_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   // 1.1 부가세 값 넣어주기
-  var vat = Math.ceil( total_sum * 0.011 );
+  var vat = Math.ceil( total_sum * 0.1 );
   var vat = vat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  document.getElementById("txt_pri_105").value = vat;	//해당 가격컬럼의 값을 vat 에 저장
+  // document.getElementById("txt_pri_105").value = vat;
   var vat_replace = vat.replace(/,/g, "");
 
   total_sum += stringNumberToInt(vat_replace)
 
   // 합계 출력
   total_sum = total_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	//총 금액컬럼에 계산된 금액 입력. 3자리마다 "," 입력.
-  document.getElementById('tot_amt_last_page2').innerText = total_sum;
+  document.getElementById('tot_amt_last_page2').innerText = total_sum_without_vat;
 
   // 가격 데이터 page간 전달을 위한 json
   var price = {
@@ -485,7 +485,7 @@ function DataloadPage2() {
     }
   }
 
-  document.getElementById("txt_pri_105").value = price['부가세'];
+  // document.getElementById("txt_pri_105").value = price['부가세'];
 
   calcSumPage2()  
 
