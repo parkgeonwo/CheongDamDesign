@@ -163,6 +163,14 @@ tbody tr:hover{
 }
 
 
+.main-input{
+    border: none;
+}
+.main-input-final{
+    border: none;
+    text-align: right;
+}
+
 
 
 

@@ -152,23 +152,44 @@ function page1_local_data_display() {
   // 저장값 불러오기
   var json_data = JSON.parse(localStorage.getItem("price"));
   
-  document.getElementById("page1_price_1").innerText = json_data['폐기물처리,철거']
-  document.getElementById("page1_price_2").innerText = json_data['문공사']
-  document.getElementById("page1_price_3").innerText = json_data['창호공사']
-  document.getElementById("page1_price_4").innerText = json_data['도배,바닥공사']
-  document.getElementById("page1_price_5").innerText = json_data['필름공사']
-  document.getElementById("page1_price_6").innerText = json_data['타일,욕실공사']
-  document.getElementById("page1_price_7").innerText = json_data['목공사']
-  document.getElementById("page1_price_8").innerText = json_data['전기공사']
-  document.getElementById("page1_price_9").innerText = json_data['확장공사']
-  document.getElementById("page1_price_10").innerText = json_data['철물공사']
-  document.getElementById("page1_price_11").innerText = json_data['기타공사']
-  document.getElementById("page1_price_12").innerText = json_data['도장공사']
-  document.getElementById("page1_price_13").innerText = json_data['가구공사']
-  document.getElementById("page1_price_14").innerText = json_data['이윤 및 공과잡비']
-  document.getElementById("page1_price_15").innerText = json_data['소계']
-  document.getElementById("page1_price_16").innerText = json_data['부가세']
-  document.getElementById("page1_price_17").innerText = json_data['합계']
+  // document.getElementById("page1_price_1").innerText = json_data['폐기물처리,철거']
+  // document.getElementById("page1_price_2").innerText = json_data['문공사']
+  // document.getElementById("page1_price_3").innerText = json_data['창호공사']
+  // document.getElementById("page1_price_4").innerText = json_data['도배,바닥공사']
+  // document.getElementById("page1_price_5").innerText = json_data['필름공사']
+  // document.getElementById("page1_price_6").innerText = json_data['타일,욕실공사']
+  // document.getElementById("page1_price_7").innerText = json_data['목공사']
+  // document.getElementById("page1_price_8").innerText = json_data['전기공사']
+  // document.getElementById("page1_price_9").innerText = json_data['확장공사']
+  // document.getElementById("page1_price_10").innerText = json_data['철물공사']
+  // document.getElementById("page1_price_11").innerText = json_data['기타공사']
+  // document.getElementById("page1_price_12").innerText = json_data['도장공사']
+  // document.getElementById("page1_price_13").innerText = json_data['가구공사']
+  // document.getElementById("page1_price_14").innerText = json_data['이윤 및 공과잡비']
+  // document.getElementById("page1_price_15").innerText = json_data['소계']
+  // document.getElementById("page1_price_16").innerText = json_data['부가세']
+  // document.getElementById("page1_price_17").innerText = json_data['합계']
+
+  document.getElementById("page1_price_1").innerHTML = `<input class="main-input" value=${json_data['폐기물처리,철거']}>`
+  document.getElementById("page1_price_2").innerHTML = `<input class="main-input" value=${json_data['문공사']}>`
+  document.getElementById("page1_price_3").innerHTML = `<input class="main-input" value=${json_data['창호공사']}>`
+  document.getElementById("page1_price_4").innerHTML = `<input class="main-input" value=${json_data['도배,바닥공사']}>`
+  document.getElementById("page1_price_5").innerHTML = `<input class="main-input" value=${json_data['필름공사']}>`
+  document.getElementById("page1_price_6").innerHTML = `<input class="main-input" value=${json_data['타일,욕실공사']}>`
+  document.getElementById("page1_price_7").innerHTML = `<input class="main-input" value=${json_data['목공사']}>`
+  document.getElementById("page1_price_8").innerHTML = `<input class="main-input" value=${json_data['전기공사']}>`
+  document.getElementById("page1_price_9").innerHTML = `<input class="main-input" value=${json_data['확장공사']}>`
+  document.getElementById("page1_price_10").innerHTML = `<input class="main-input" value=${json_data['철물공사']}>`
+  document.getElementById("page1_price_11").innerHTML = `<input class="main-input" value=${json_data['기타공사']}>`
+  document.getElementById("page1_price_12").innerHTML = `<input class="main-input" value=${json_data['도장공사']}>`
+  document.getElementById("page1_price_13").innerHTML = `<input class="main-input" value=${json_data['가구공사']}>`
+  document.getElementById("page1_price_14").innerHTML = `<input class="main-input" value=${json_data['이윤 및 공과잡비']}>`
+  document.getElementById("page1_price_15").innerHTML = `<input class="main-input-final" value=${json_data['소계']}>`
+  document.getElementById("page1_price_16").innerHTML = `<input class="main-input-final" value=${json_data['부가세']}>`
+  document.getElementById("page1_price_17").innerHTML = `<input class="main-input-final" value=${json_data['합계']}>`
+
+
+
 }
 
 
