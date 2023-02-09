@@ -137,7 +137,16 @@
                       document.write("<td class='page1_table3_class' width=" +width_array[j]+ "align='left' id='page1_price_"+k+"'>"+txt+"</td>");
                     }
                     else{
-                      document.write("<td class='page1_table3_class' width=" +width_array[j]+ "align='left'>"+txt+"</td>");
+                      if(j==1){
+                        document.write("<td class='page1_table3_class' width=" +width_array[j]+ "align='left'>"+`<input class="main-input" value=${txt}>`+"</td>");
+                      } else{
+                        document.write("<td class='page1_table3_class' width=" +width_array[j]+ "align='left'>"+txt+"</td>");
+                      }
+                      
+
+
+                      // document.write("<td class='page1_table3_class' width=" +width_array[j]+ "align='left'>"+txt+"</td>");
+
                     }
 
 
